@@ -29,5 +29,5 @@ class DebuggingServer(smtpd.DebuggingServer):
                     raise IOError("Tried too many filenames like: %s" % dest)
                 dest = os.path.join(path, "%s_%s.eml" % (filename, index))
                 index = index + 1
-            with open(dest, "w") as f:
+            with open(dest, "wb") as f:
                 f.write(data)
